@@ -1,6 +1,8 @@
 # Sightings
 
-Source for [sightings.indrayam.com](https://sightings.indrayam.com/): products, SDKs, frameworks, and ideas that caught my eye and may deserve a second look. [Field Notes](https://fieldnotes.indrayam.com/) are what I have studied up close; Sightings are what caught my eye.
+Source for [sightings.indrayam.com](https://sightings.indrayam.com/): products, SDKs, frameworks, and ideas that caught my eye and may deserve a second look.
+
+Sightings is the companion to [Field Notes](https://fieldnotes.indrayam.com/). Field Notes are long-form explainers on things I have studied up close; Sightings are the quick log of things spotted in passing. A sighting that holds up may later earn a Field Notes explainer.
 
 ## How it works
 
