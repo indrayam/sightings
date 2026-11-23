@@ -1,6 +1,6 @@
 # Sightings
 
-Source for [sightings.indrayam.com](https://sightings.indrayam.com/): products, SDKs, frameworks, and ideas that caught my eye and may deserve a second look. If [Cribsheets](https://cribsheets.indrayam.com/) are the field notes, these are the sightings.
+Source for [sightings.indrayam.com](https://sightings.indrayam.com/): products, SDKs, frameworks, and ideas that caught my eye and may deserve a second look. [Field Notes](https://fieldnotes.indrayam.com/) are what I have studied up close; Sightings are what caught my eye.
 
 ## How it works
 
