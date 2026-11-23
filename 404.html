@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 - Sightings</title>
+  <meta name="description" content="Nothing on the radar: this page was never sighted.">
+  <meta name="robots" content="noindex">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="404 - Sightings">
+  <meta property="og:description" content="Nothing on the radar: this page was never sighted.">
+  <meta property="og:site_name" content="Sightings">
+  <meta property="og:image" content="https://sightings.indrayam.com/images/og-sightings.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#e7651a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&amp;family=Source+Sans+Pro:wght@400;600;700;900&amp;display=swap">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="page-container">
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Site navigation">
+        <ul>
+          <li><a href="https://indrayam.com/">Home</a></li>
+          <li><a href="https://blog.indrayam.com/aboutme.html">About Me</a></li>
+          <li><a href="https://resume.indrayam.com/">Resume</a></li>
+          <li><a href="https://dailydiff.indrayam.com/">Daily Diff</a></li>
+          <li><a href="https://fieldnotes.indrayam.com/">Field Notes</a></li>
+          <li><a href="https://sightings.indrayam.com/" aria-current="page">Sightings</a></li>
+          <li><a href="https://blog.indrayam.com/">Writings</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="sheet error-page">
+      <svg class="error-radar" viewBox="0 0 240 240" width="200" height="200" role="img" aria-label="An empty radar screen">
+        <g fill="none" stroke="#e7651a" stroke-width="2">
+          <circle cx="120" cy="120" r="110" stroke-opacity="0.4"/>
+          <circle cx="120" cy="120" r="74" stroke-opacity="0.35"/>
+          <circle cx="120" cy="120" r="38" stroke-opacity="0.3"/>
+          <path d="M120 10V230M10 120H230" stroke-opacity="0.18"/>
+        </g>
+        <g class="error-sweep">
+          <path d="M120 120 L120 10 A110 110 0 0 1 215.3 65 Z" fill="#e7651a" fill-opacity="0.12"/>
+          <line x1="120" y1="120" x2="215.3" y2="65" stroke="#e7651a" stroke-width="3"/>
+        </g>
+        <circle cx="120" cy="120" r="5" fill="#bf5213"/>
+      </svg>
+      <p class="error-code-label">404</p>
+      <h1 class="masthead-name">Nothing on the radar</h1>
+      <p class="masthead-tagline">This page was never sighted. Maybe it was nothing after all.</p>
+      <pre class="error-terminal"><code>$ grep -i "this-page" /var/log/sightings.log
+$ echo $?
+1</code></pre>
+      <p class="error-back"><a href="/">&larr; Back to all sightings</a></p>
+    </main>
+
+    <footer class="copyright">
+      <a href="https://creativecommons.org/licenses/by-nd-nc/1.0/">Copyright</a> &copy; 2026 Anand Sharma. <a href="https://blog.indrayam.com/disclaimer.html">Disclaimer</a>
+    </footer>
+  </div>
+</body>
+</html>
