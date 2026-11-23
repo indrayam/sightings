@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sightings | Anand Sharma</title>
+  <meta name="description" content="Sightings by Anand Sharma: new products, SDKs, frameworks, and ideas that caught my eye and may deserve a second look.">
+  <link rel="canonical" href="https://sightings.indrayam.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sightings | Anand Sharma">
+  <meta property="og:description" content="New products, SDKs, frameworks, and ideas that caught my eye and may deserve a second look.">
+  <meta property="og:url" content="https://sightings.indrayam.com/">
+  <meta property="og:site_name" content="Sightings">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sightings | Anand Sharma">
+  <meta name="twitter:description" content="New products, SDKs, frameworks, and ideas that caught my eye and may deserve a second look.">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#e7651a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&amp;family=Source+Sans+Pro:wght@400;600;700;900&amp;display=swap">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="preload" href="./asked-about.json" as="fetch" crossorigin>
+</head>
+<body>
+  <div class="page-container">
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Site navigation">
+        <ul>
+          <li><a href="https://indrayam.com/">Home</a></li>
+          <li><a href="https://blog.indrayam.com/aboutme.html">About Me</a></li>
+          <li><a href="https://resume.indrayam.com/">Resume</a></li>
+          <li><a href="https://dailydiff.indrayam.com/">Daily Diff</a></li>
+          <li><a href="https://cribsheets.indrayam.com/">Cribsheets</a></li>
+          <li><a href="https://sightings.indrayam.com/" aria-current="page">Sightings</a></li>
+          <li><a href="https://blog.indrayam.com/">Writings</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="sheet">
+      <header class="masthead">
+        <div class="masthead-eyebrow">
+          <span class="masthead-eyebrow-left">Field log</span>
+          <div class="masthead-date-wrap">
+            <time id="masthead-updated" datetime="">Loading…</time>
+          </div>
+          <span id="masthead-count" class="masthead-eyebrow-right">&nbsp;</span>
+        </div>
+        <h1 class="masthead-name">Sightings</h1>
+        <p class="masthead-tagline">If Cribsheets are my field notes, these are the sightings: products, SDKs, frameworks, and ideas that caught my eye and may deserve a second look. Some will turn out to be nothing. Some won&rsquo;t.</p>
+        <hr class="masthead-rule">
+      </header>
+
+      <section class="controls" aria-label="Filter sightings">
+        <div class="controls-row">
+          <div id="recency-tabs" class="recency-tabs" role="group" aria-label="Time range"></div>
+          <label class="search">
+            <span class="sr-only">Filter by name or reason</span>
+            <svg aria-hidden="true" viewBox="0 0 20 20" width="16" height="16"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M13 13l4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <input id="search" type="search" placeholder="Filter by name or reason" autocomplete="off">
+          </label>
+        </div>
+        <div id="category-chips" class="category-chips" role="group" aria-label="Category"></div>
+      </section>
+
+      <p id="results-status" class="results-status" role="status" aria-live="polite"></p>
+      <div id="cards" class="cards" aria-busy="true"></div>
+
+      <footer class="colophon">
+        Kept up to date by my research bot. Every time something comes up again, its count goes up and its date moves forward; nothing is ever dropped.
+      </footer>
+    </main>
+
+    <footer class="copyright">
+      <a href="https://creativecommons.org/licenses/by-nd-nc/1.0/">Copyright</a> &copy; 2026 Anand Sharma. <a href="https://blog.indrayam.com/disclaimer.html">Disclaimer</a>
+    </footer>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

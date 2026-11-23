@@ -1,0 +1,941 @@
+{
+  "schema_version": "1",
+  "title": "Asked About",
+  "subtitle": "Every technology you've asked Archie about since mid-September 2026, most recent first.",
+  "description": "Every technology you've asked Archie about since mid-September 2026, most recent first.",
+  "footer": "Updated every Sunday with the tech radar: anything you ask about again gets a higher count and a new last date, and rows are never dropped. Past week and Past month are counted from today's date when you open the Page; items with no date show only under All. Times come from voice calls and are in Central Time; where no timestamp survived, the card says \"time n/a\" or \"date n/a\".",
+  "updated": "2026-11-23T11:18:57-06:00",
+  "timezone": "America/Chicago",
+  "source_page": "https://cursor.com/canvas/store-32e840fe-082e-4b69-9eed-c8ef45bd8154/d69ce4f5-cf93-4b86-8de1-7344b89e3261",
+  "count": 37,
+  "categories": [
+    {
+      "id": "agents-harnesses",
+      "label": "Agents & harnesses",
+      "count": 9
+    },
+    {
+      "id": "ai-coding-tools",
+      "label": "AI coding tools",
+      "count": 6
+    },
+    {
+      "id": "models",
+      "label": "Models",
+      "count": 1
+    },
+    {
+      "id": "standards-practices",
+      "label": "Standards & practices",
+      "count": 8
+    },
+    {
+      "id": "terminals-editors",
+      "label": "Terminals & editors",
+      "count": 5
+    },
+    {
+      "id": "rust-data",
+      "label": "Rust & data",
+      "count": 3
+    },
+    {
+      "id": "infra-platforms",
+      "label": "Infra & platforms",
+      "count": 3
+    },
+    {
+      "id": "diagrams-ui",
+      "label": "Diagrams & UI",
+      "count": 2
+    }
+  ],
+  "filters": {
+    "recency": [
+      {
+        "id": "week",
+        "label": "Past week",
+        "days": 7
+      },
+      {
+        "id": "month",
+        "label": "Past month",
+        "days": 31
+      },
+      {
+        "id": "all",
+        "label": "All",
+        "default": true
+      }
+    ],
+    "recency_field": "last",
+    "undated_only_in": "all",
+    "text_search_fields": [
+      "tech",
+      "why",
+      "cat",
+      "sources.label"
+    ],
+    "search_placeholder": "Filter by name or reason",
+    "category_all_label": "All categories"
+  },
+  "sort": {
+    "field": "last",
+    "order": "desc",
+    "undated": "last"
+  },
+  "layout": {
+    "type": "card-grid",
+    "columns": {
+      "phone": 1,
+      "tablet": 2,
+      "desktop": 3
+    }
+  },
+  "items": [
+    {
+      "id": "vercel-board",
+      "tech": "Vercel Board",
+      "href": "https://vercel.com/docs/board",
+      "cat": "Agents & harnesses",
+      "cat_id": "agents-harnesses",
+      "times": 1,
+      "why": "Matt Pocock called it a genius idea teams should build themselves: a Slack-like board where agents claim tasks and coordinate with people. Parked as a reference design; the primitive maps cleanly to Rust + Postgres (event log, SKIP LOCKED claims, LISTEN/NOTIFY).",
+      "sources": [
+        {
+          "label": "Matt Pocock post (Nov 23)",
+          "url": "https://x.com/mattpocockuk/status/2124797717834543167"
+        },
+        {
+          "label": "Board docs",
+          "url": "https://vercel.com/docs/board"
+        },
+        {
+          "label": "Launch blog",
+          "url": "https://vercel.com/blog/introducing-vercel-board"
+        },
+        {
+          "label": "The New Stack",
+          "url": "https://thenewstack.io/vercel-board-agent-swarms/"
+        }
+      ],
+      "ref": "First Nov 23, 10:54 AM CT",
+      "last": "2026-11-23",
+      "first_referenced": "2026-11-23T10:54:00-06:00",
+      "first_has_time": true,
+      "last_referenced": "2026-11-23T10:54:00-06:00",
+      "last_has_time": true
+    },
+    {
+      "id": "rex-superlogical",
+      "tech": "Rex (Superlogical)",
+      "href": "https://x.com/mitchellh/status/2122464126240989217",
+      "cat": "Terminals & editors",
+      "cat_id": "terminals-editors",
+      "times": 2,
+      "why": "Mitchell's demo of remote copy/paste, drag/drop, and port forwarding; asked for a getting-started tutorial for the Mac + beast, which Finn saved to indrayam/cli-stack. On Nov 20 asked whether Prized's Rex devbox guide adds anything to Oppie's Rex HOWTO: it adds the preview channel flag, Add Remote Host in the app, rex skill setup for agents, and a short troubleshooting list.",
+      "sources": [
+        {
+          "label": "Demo post",
+          "url": "https://x.com/mitchellh/status/2122464126240989217"
+        },
+        {
+          "label": "Install docs",
+          "url": "https://www.superlogical.com/rex/docs/installation"
+        },
+        {
+          "label": "Linux install",
+          "url": "https://www.superlogical.com/rex/docs/linux/installation"
+        },
+        {
+          "label": "Rex over SSH post (Nov 19)",
+          "url": "https://x.com/mitchellh/status/2123516770812387809"
+        },
+        {
+          "label": "Rex-on-exe (exe.dev blog)",
+          "url": "https://blog.exe.dev/rex"
+        },
+        {
+          "label": "Hudson Griffith post (Nov 20)",
+          "url": "https://x.com/hudson_gri/status/2123844341768880169"
+        },
+        {
+          "label": "Prized Rex devbox guide",
+          "url": "https://prized.dev/docs/rex"
+        }
+      ],
+      "ref": "First Nov 16, 10:36 PM CT · Last Nov 20, 11:04 PM CT",
+      "last": "2026-11-20",
+      "first_referenced": "2026-11-16T22:36:00-06:00",
+      "first_has_time": true,
+      "last_referenced": "2026-11-20T23:04:00-06:00",
+      "last_has_time": true
+    },
+    {
+      "id": "discobox-software-factory",
+      "tech": "Discobox software factory",
+      "href": "https://github.com/discobox-ai/factory-demo",
+      "cat": "Agents & harnesses",
+      "cat_id": "agents-harnesses",
+      "times": 1,
+      "why": "Darren Shepherd's post showing his software factory: a manager agent runs the control loop and hands triaged GitHub work to Discobox workers, driven by skills. Asked whether this was already parked; it was, as Discobox in Non-Rust watch since Oct 24, so the new repos just extend that entry.",
+      "sources": [
+        {
+          "label": "X post",
+          "url": "https://x.com/ibuildthecloud/status/2123483773534863684"
+        },
+        {
+          "label": "factory-demo repo",
+          "url": "https://github.com/discobox-ai/factory-demo"
+        },
+        {
+          "label": "manager repo",
+          "url": "https://github.com/discobox-ai/manager"
+        },
+        {
+          "label": "Discobox",
+          "url": "https://discobox.ai"
+        }
+      ],
+      "ref": "Nov 19, 10:50 PM CT",
+      "last": "2026-11-19",
+      "first_referenced": "2026-11-19T22:50:00-06:00",
+      "first_has_time": true,
+      "last_referenced": "2026-11-19T22:50:00-06:00",
+      "last_has_time": true
+    },
+    {
+      "id": "docker-sandboxes-sbx",
+      "tech": "Docker Sandboxes (sbx)",
+      "href": "https://www.docker.com/products/docker-sandboxes/",
+      "cat": "Agents & harnesses",
+      "cat_id": "agents-harnesses",
+      "times": 1,
+      "why": "Shared Docker's Nov 19 rebrand post and asked how it compares with OrbStack, your pick for Docker plus Ubuntu on the new personal Mac. The post itself is branding. The real product is sbx, a standalone CLI that runs Claude Code or Codex unattended in throwaway microVMs with network policies, so it complements OrbStack rather than replacing it.",
+      "sources": [
+        {
+          "label": "X post",
+          "url": "https://x.com/Docker/status/2123464195270152664"
+        },
+        {
+          "label": "Blog",
+          "url": "https://www.docker.com/blog/meet-the-new-docker-built-to-run-on-trust/"
+        },
+        {
+          "label": "Install docs",
+          "url": "https://docs.docker.com/ai/sandboxes/install/"
+        }
+      ],
+      "ref": "Nov 19, 5:09 PM CT",
+      "last": "2026-11-19",
+      "first_referenced": "2026-11-19T17:09:00-06:00",
+      "first_has_time": true,
+      "last_referenced": "2026-11-19T17:09:00-06:00",
+      "last_has_time": true
+    },
+    {
+      "id": "vercel-agent-browser",
+      "tech": "Vercel agent-browser",
+      "href": "https://github.com/vercel-labs/agent-browser",
+      "cat": "AI coding tools",
+      "cat_id": "ai-coding-tools",
+      "times": 2,
+      "why": "A native Rust CLI that lets Claude Code and Codex check UI work through accessibility snapshots. When Romy's Nov 17 reminder fired you asked for another in a month (Dec 17) and checked it was on the parked list; it is, in Rust experimental, and it topped Rust weekly trending this week.",
+      "sources": [
+        {
+          "label": "Repo",
+          "url": "https://github.com/vercel-labs/agent-browser"
+        },
+        {
+          "label": "Site",
+          "url": "https://agent-browser.dev"
+        },
+        {
+          "label": "Trevin's post",
+          "url": "https://x.com/trevin/status/2121714790254936077"
+        }
+      ],
+      "ref": "First Nov 14 (time n/a) · Last Nov 17 (time n/a, via Romy)",
+      "last": "2026-11-17",
+      "first_referenced": "2026-11-14",
+      "first_has_time": false,
+      "last_referenced": "2026-11-17",
+      "last_has_time": false
+    },
+    {
+      "id": "neurosymbolic-ai-chollets-harness-argument",
+      "tech": "Neurosymbolic AI: Chollet's harness argument",
+      "href": "https://x.com/fchollet/status/2085323411903889876",
+      "cat": "Agents & harnesses",
+      "cat_id": "agents-harnesses",
+      "times": 1,
+      "why": "Grady Booch's 'I stand with Francois' post; wanted the term explained plus the argument that a harness is a neurosymbolic architecture. Saved by Finn to firehose/A1/ai-essay.",
+      "sources": [
+        {
+          "label": "Booch post",
+          "url": "https://x.com/Grady_Booch/status/2085448991014355123"
+        },
+        {
+          "label": "Chollet post",
+          "url": "https://x.com/fchollet/status/2085323411903889876"
+        }
+      ],
+      "ref": "Nov 16, 7:24 PM CT",
+      "last": "2026-11-16",
+      "first_referenced": "2026-11-16T19:24:00-06:00",
+      "first_has_time": true,
+      "last_referenced": "2026-11-16T19:24:00-06:00",
+      "last_has_time": true
+    },
+    {
+      "id": "jiff-1-0",
+      "tech": "Jiff 1.0",
+      "href": "https://github.com/BurntSushi/jiff",
+      "cat": "Rust & data",
+      "cat_id": "rust-data",
+      "times": 2,
+      "why": "BurntSushi's datetime crate hit 1.0; parked under Rust experimental, and it's now the standing default over chrono for any Rust datetime work (also passed to Ellie).",
+      "sources": [
+        {
+          "label": "X post",
+          "url": "https://x.com/burntsushi5/status/2122085202738467144"
+        },
+        {
+          "label": "Repo",
+          "url": "https://github.com/BurntSushi/jiff"
+        }
+      ],
+      "ref": "First Nov 15, 6:51 PM CT · Last Nov 16, 8:37 AM CT",
+      "last": "2026-11-16",
+      "first_referenced": "2026-11-15T18:51:00-06:00",
+      "first_has_time": true,
+      "last_referenced": "2026-11-16T08:37:00-06:00",
+      "last_has_time": true
+    },
+    {
+      "id": "gemini-4-argon",
+      "tech": "Gemini 4 Argon",
+      "href": "https://x.com/farzyness/status/2121821420137423101",
+      "cat": "Models",
+      "cat_id": "models",
+      "times": 1,
+      "why": "Farzad's post called Grok Bot + Opus + Argon AGI-tier and highlighted Argon's 1M-token context, with a $2/$10 intro price through Nov 30. Asked what Argon is and how Grok Bot could use it (Gemini CLI on the box, the API, or a gateway) for huge-context jobs like whole-repo Rust refactors.",
+      "sources": [
+        {
+          "label": "X post",
+          "url": "https://x.com/farzyness/status/2121821420137423101"
+        }
+      ],
+      "ref": "Nov 14, 11:17 PM CT",
+      "last": "2026-11-14",
+      "first_referenced": "2026-11-14T23:17:00-06:00",
+      "first_has_time": true,
+      "last_referenced": "2026-11-14T23:17:00-06:00",
+      "last_has_time": true
+    },
+    {
+      "id": "pi-durable",
+      "tech": "pi-durable",
+      "href": "https://x.com/indrayam/status/2121746703338381431",
+      "cat": "Agents & harnesses",
+      "cat_id": "agents-harnesses",
+      "times": 2,
+      "why": "Came from Tobi's post calling it the posix of agent programming. It's TypeScript, so it stays a design reference: checkpointed steps you could copy into Rust workers on Fly and Neon.",
+      "sources": [
+        {
+          "label": "X post",
+          "url": "https://x.com/indrayam/status/2121746703338381431"
+        }
+      ],
+      "ref": "Nov 14 (time n/a), asked twice that day",
+      "last": "2026-11-14",
+      "first_referenced": "2026-11-14",
+      "first_has_time": false,
+      "last_referenced": "2026-11-14",
+      "last_has_time": false
+    },
+    {
+      "id": "claude-ai-spring-boot",
+      "tech": "claude-ai-spring-boot",
+      "href": "https://github.com/piomin/claude-ai-spring-boot",
+      "cat": "Standards & practices",
+      "cat_id": "standards-practices",
+      "times": 1,
+      "why": "Piotr Mińkowski's skill pack. Use it as the template for your own Axum/SQLx/Fly skill pack, shared by Claude Code and Codex, not for the Java.",
+      "sources": [
+        {
+          "label": "Repo",
+          "url": "https://github.com/piomin/claude-ai-spring-boot"
+        }
+      ],
+      "ref": "Nov 14 (time n/a)",
+      "last": "2026-11-14",
+      "first_referenced": "2026-11-14",
+      "first_has_time": false,
+      "last_referenced": "2026-11-14",
+      "last_has_time": false
+    },
+    {
+      "id": "webmcp",
+      "tech": "WebMCP",
+      "href": "https://webmcp.com/sites/ikea.com",
+      "cat": "Standards & practices",
+      "cat_id": "standards-practices",
+      "times": 1,
+      "why": "IKEA exposing tools to agents. Shows how websites may become directly callable by browser agents, and by Grok Bot.",
+      "sources": [
+        {
+          "label": "IKEA site",
+          "url": "https://webmcp.com/sites/ikea.com"
+        }
+      ],
+      "ref": "Nov 11 (time n/a)",
+      "last": "2026-11-11",
+      "first_referenced": "2026-11-11",
+      "first_has_time": false,
+      "last_referenced": "2026-11-11",
+      "last_has_time": false
+    },
+    {
+      "id": "cursor-projects",
+      "tech": "Cursor Projects",
+      "href": "https://cursor.com/blog/projects-multiplayer",
+      "cat": "AI coding tools",
+      "cat_id": "ai-coding-tools",
+      "times": 3,
+      "why": "Wanted to understand how skills and MCP wire into Projects, then how well the Nov 10 multiplayer rebuild is documented. Its coordinator model shapes cloud handoffs to the beast.",
+      "sources": [
+        {
+          "label": "Blog",
+          "url": "https://cursor.com/blog/projects-multiplayer"
+        }
+      ],
+      "ref": "First Sep 19 · Last Nov 10 (times n/a)",
+      "last": "2026-11-10",
+      "first_referenced": "2026-09-19",
+      "first_has_time": false,
+      "last_referenced": "2026-11-10",
+      "last_has_time": false
+    },
+    {
+      "id": "gpui",
+      "tech": "GPUI",
+      "href": "https://www.gpui.rs/",
+      "cat": "Diagrams & UI",
+      "cat_id": "diagrams-ui",
+      "times": 1,
+      "why": "Discord chose Zed's GPU UI framework over Tauri. The leading option if you ever want a native Rust desktop UI.",
+      "sources": [
+        {
+          "label": "Site",
+          "url": "https://www.gpui.rs/"
+        }
+      ],
+      "ref": "Nov 9 (time n/a)",
+      "last": "2026-11-09",
+      "first_referenced": "2026-11-09",
+      "first_has_time": false,
+      "last_referenced": "2026-11-09",
+      "last_has_time": false
+    },
+    {
+      "id": "tailscale-oauth-apps",
+      "tech": "Tailscale OAuth apps",
+      "href": "https://tailscale.com/blog/oauth-apps-ga",
+      "cat": "Infra & platforms",
+      "cat_id": "infra-platforms",
+      "times": 1,
+      "why": "Would let Grok Bot reach private MCP servers and the beast on your tailnet without exposing them publicly. Cisco Umbrella on your Mac may block it.",
+      "sources": [
+        {
+          "label": "Blog",
+          "url": "https://tailscale.com/blog/oauth-apps-ga"
+        }
+      ],
+      "ref": "Nov 9 (time n/a)",
+      "last": "2026-11-09",
+      "first_referenced": "2026-11-09",
+      "first_has_time": false,
+      "last_referenced": "2026-11-09",
+      "last_has_time": false
+    },
+    {
+      "id": "cursor-my-machines-self-hosted-worker",
+      "tech": "Cursor My Machines (self-hosted worker)",
+      "href": "https://cursor.com/docs/cloud-agent/my-machines",
+      "cat": "AI coding tools",
+      "cat_id": "ai-coding-tools",
+      "times": 2,
+      "why": "Running Cursor cloud agents on your own hardware, which led to the beast HOWTO. It points toward self-hosted agent compute inside Cisco.",
+      "sources": [
+        {
+          "label": "Docs",
+          "url": "https://cursor.com/docs/cloud-agent/my-machines"
+        }
+      ],
+      "ref": "First Oct 22 · Last Nov 5 (dates of the filed notes, times n/a)",
+      "last": "2026-11-05",
+      "first_referenced": "2026-10-22",
+      "first_has_time": false,
+      "last_referenced": "2026-11-05",
+      "last_has_time": false
+    },
+    {
+      "id": "vercel-ai-cli",
+      "tech": "Vercel ai-cli",
+      "href": "https://ai-cli.dev/",
+      "cat": "AI coding tools",
+      "cat_id": "ai-coding-tools",
+      "times": 1,
+      "why": "A terminal front door to many models through AI Gateway. Parked as a terminal-first option, not a replacement for Disha, Usha, or Vinny.",
+      "sources": [
+        {
+          "label": "Site",
+          "url": "https://ai-cli.dev/"
+        }
+      ],
+      "ref": "Nov 3 (time n/a)",
+      "last": "2026-11-03",
+      "first_referenced": "2026-11-03",
+      "first_has_time": false,
+      "last_referenced": "2026-11-03",
+      "last_has_time": false
+    },
+    {
+      "id": "deep-agents-langgraph",
+      "tech": "Deep Agents (LangGraph)",
+      "href": "https://github.com/langchain-ai/deepagents",
+      "cat": "Agents & harnesses",
+      "cat_id": "agents-harnesses",
+      "times": 1,
+      "why": "Placing it in your Model + Harness view: LangChain's harness shaped like Claude Code, not a new kind of agent. Useful when comparing supervisor-and-worker designs.",
+      "sources": [
+        {
+          "label": "Repo",
+          "url": "https://github.com/langchain-ai/deepagents"
+        }
+      ],
+      "ref": "Oct 29 (time n/a)",
+      "last": "2026-10-29",
+      "first_referenced": "2026-10-29",
+      "first_has_time": false,
+      "last_referenced": "2026-10-29",
+      "last_has_time": false
+    },
+    {
+      "id": "raycast-v2",
+      "tech": "Raycast v2",
+      "href": "https://www.raycast.com/",
+      "cat": "Terminals & editors",
+      "cat_id": "terminals-editors",
+      "times": 1,
+      "why": "The v2 upgrade brought a login and migration prompt. You stayed on Raycast once you found the prompt can be skipped and no account is needed.",
+      "sources": [
+        {
+          "label": "Site",
+          "url": "https://www.raycast.com/"
+        }
+      ],
+      "ref": "Oct 11 (time n/a)",
+      "last": "2026-10-11",
+      "first_referenced": "2026-10-11",
+      "first_has_time": false,
+      "last_referenced": "2026-10-11",
+      "last_has_time": false
+    },
+    {
+      "id": "turso",
+      "tech": "Turso",
+      "href": "https://github.com/tursodatabase/turso",
+      "cat": "Rust & data",
+      "cat_id": "rust-data",
+      "times": 2,
+      "why": "Saw it on X as a Rust rewrite of SQLite and asked whether to focus on it, then whether you need tursodb to learn. Learn on plain sqlite3; Neon stays the default.",
+      "sources": [
+        {
+          "label": "Repo",
+          "url": "https://github.com/tursodatabase/turso"
+        }
+      ],
+      "ref": "First Sep 29, 5:55 PM CT · Last Oct 10 (time n/a)",
+      "last": "2026-10-10",
+      "first_referenced": "2026-09-29T17:55:00-05:00",
+      "first_has_time": true,
+      "last_referenced": "2026-10-10",
+      "last_has_time": false
+    },
+    {
+      "id": "opencode",
+      "tech": "OpenCode",
+      "href": "https://github.com/anomalyco/opencode",
+      "cat": "Agents & harnesses",
+      "cat_id": "agents-harnesses",
+      "times": 3,
+      "why": "An open harness that works with any model provider, weighed against Codex and Cursor. Then the company behind it and its competition. On the watch list.",
+      "sources": [
+        {
+          "label": "Repo",
+          "url": "https://github.com/anomalyco/opencode"
+        }
+      ],
+      "ref": "First Oct 3 · Last Oct 8 (times n/a), plus a later ask about the company behind it (date n/a)",
+      "last": "2026-10-08",
+      "first_referenced": "2026-10-03",
+      "first_has_time": false,
+      "last_referenced": "2026-10-08",
+      "last_has_time": false
+    },
+    {
+      "id": "pi",
+      "tech": "Pi",
+      "href": "https://github.com/earendil-works/pi",
+      "cat": "Agents & harnesses",
+      "cat_id": "agents-harnesses",
+      "times": 2,
+      "why": "Mario Zechner's minimal coding agent, which may fit your taste better than OpenCode. pi-durable is built on it.",
+      "sources": [
+        {
+          "label": "Repo",
+          "url": "https://github.com/earendil-works/pi"
+        }
+      ],
+      "ref": "First Oct 7 · Last Oct 8 (times n/a)",
+      "last": "2026-10-08",
+      "first_referenced": "2026-10-07",
+      "first_has_time": false,
+      "last_referenced": "2026-10-08",
+      "last_has_time": false
+    },
+    {
+      "id": "lazygit",
+      "tech": "LazyGit",
+      "href": "https://github.com/jesseduffield/lazygit",
+      "cat": "Terminals & editors",
+      "cat_id": "terminals-editors",
+      "times": 1,
+      "why": "Wanted a hands-on tutorial with a practice repo, filed as lazy-git.md under cli-fu. Gives you a terminal-first way to review Codex and Claude diffs hunk by hunk.",
+      "sources": [
+        {
+          "label": "Repo",
+          "url": "https://github.com/jesseduffield/lazygit"
+        }
+      ],
+      "ref": "Oct 7, 6:10 PM CT",
+      "last": "2026-10-07",
+      "first_referenced": "2026-10-07T18:10:00-05:00",
+      "first_has_time": true,
+      "last_referenced": "2026-10-07T18:10:00-05:00",
+      "last_has_time": true
+    },
+    {
+      "id": "execplan-plans-md",
+      "tech": "ExecPlan (PLANS.md)",
+      "href": "https://cookbook.openai.com/articles/codex_exec_plans",
+      "cat": "Standards & practices",
+      "cat_id": "standards-practices",
+      "times": 2,
+      "why": "A living plan file per task, plus where to put the files. Your default for most work in any harness.",
+      "sources": [
+        {
+          "label": "Cookbook",
+          "url": "https://cookbook.openai.com/articles/codex_exec_plans"
+        }
+      ],
+      "ref": "First Sep 30 · Last Oct 7 (times n/a)",
+      "last": "2026-10-07",
+      "first_referenced": "2026-09-30",
+      "first_has_time": false,
+      "last_referenced": "2026-10-07",
+      "last_has_time": false
+    },
+    {
+      "id": "openspec",
+      "tech": "OpenSpec",
+      "href": "https://github.com/Fission-AI/OpenSpec",
+      "cat": "Standards & practices",
+      "cat_id": "standards-practices",
+      "times": 3,
+      "why": "Spec-driven development, including the stories beta for a team of 15 to 30. Use it for behavior other people depend on.",
+      "sources": [
+        {
+          "label": "Repo",
+          "url": "https://github.com/Fission-AI/OpenSpec"
+        }
+      ],
+      "ref": "First Sep 19 (time n/a) · Sep 30, 6:10 PM CT · Last Oct 7 (time n/a)",
+      "last": "2026-10-07",
+      "first_referenced": "2026-09-19",
+      "first_has_time": false,
+      "last_referenced": "2026-10-07",
+      "last_has_time": false
+    },
+    {
+      "id": "mermaid-and-native-diagram-tools",
+      "tech": "Mermaid and native diagram tools",
+      "href": "https://mermaid.js.org/",
+      "cat": "Diagrams & UI",
+      "cat_id": "diagrams-ui",
+      "times": 1,
+      "why": "Asked whether you can draw with draw.io, Miro, or Figma, and whether Mermaid renders in the iOS app. It does, and Mermaid is the native, text-based path for architecture diagrams.",
+      "sources": [
+        {
+          "label": "Site",
+          "url": "https://mermaid.js.org/"
+        }
+      ],
+      "ref": "Oct 6, 7:02 PM CT",
+      "last": "2026-10-06",
+      "first_referenced": "2026-10-06T19:02:00-05:00",
+      "first_has_time": true,
+      "last_referenced": "2026-10-06T19:02:00-05:00",
+      "last_has_time": true
+    },
+    {
+      "id": "grok-bot-box-architecture",
+      "tech": "Grok Bot box architecture",
+      "href": null,
+      "cat": "Infra & platforms",
+      "cat_id": "infra-platforms",
+      "times": 1,
+      "why": "How bots share one computer and file system: microVMs on a shared host vs a network mount, plus Meta Muse's security write-up. Context for what the fleet can safely share.",
+      "sources": [],
+      "ref": "Oct 4, 7:14 PM CT",
+      "last": "2026-10-04",
+      "first_referenced": "2026-10-04T19:14:00-05:00",
+      "first_has_time": true,
+      "last_referenced": "2026-10-04T19:14:00-05:00",
+      "last_has_time": true
+    },
+    {
+      "id": "neovim-0-12",
+      "tech": "Neovim 0.12",
+      "href": "https://github.com/neovim/neovim/releases/tag/v0.12.6",
+      "cat": "Terminals & editors",
+      "cat_id": "terminals-editors",
+      "times": 2,
+      "why": "Wanted a lean, well-regarded Mac setup with a Lua config and language servers for Go, Rust, C++, Zig, Python, and TypeScript, not a distro. 0.13 is close.",
+      "sources": [
+        {
+          "label": "Release",
+          "url": "https://github.com/neovim/neovim/releases/tag/v0.12.6"
+        }
+      ],
+      "ref": "First Oct 3, 3:59 PM CT · Last Oct 4 (time n/a)",
+      "last": "2026-10-04",
+      "first_referenced": "2026-10-03T15:59:00-05:00",
+      "first_has_time": true,
+      "last_referenced": "2026-10-04",
+      "last_has_time": false
+    },
+    {
+      "id": "wezterm",
+      "tech": "WezTerm",
+      "href": "https://github.com/wezterm/wezterm",
+      "cat": "Terminals & editors",
+      "cat_id": "terminals-editors",
+      "times": 1,
+      "why": "Asked to track it: a terminal and multiplexer configured in Lua, next to Ghostty.",
+      "sources": [
+        {
+          "label": "Repo",
+          "url": "https://github.com/wezterm/wezterm"
+        }
+      ],
+      "ref": "Oct 3 (time n/a)",
+      "last": "2026-10-03",
+      "first_referenced": "2026-10-03",
+      "first_has_time": false,
+      "last_referenced": "2026-10-03",
+      "last_has_time": false
+    },
+    {
+      "id": "pstack",
+      "tech": "pStack",
+      "href": "https://github.com/cursor/plugins",
+      "cat": "Standards & practices",
+      "cat_id": "standards-practices",
+      "times": 2,
+      "why": "poteto's skill pack for Cursor and Claude Code. You corrected its description. A model for how to write your own skills.",
+      "sources": [
+        {
+          "label": "Repo",
+          "url": "https://github.com/cursor/plugins"
+        }
+      ],
+      "ref": "First Oct 1 · Last Oct 3 (times n/a)",
+      "last": "2026-10-03",
+      "first_referenced": "2026-10-01",
+      "first_has_time": false,
+      "last_referenced": "2026-10-03",
+      "last_has_time": false
+    },
+    {
+      "id": "agents-md-at-team-scale",
+      "tech": "AGENTS.md at team scale",
+      "href": "https://agents.md/",
+      "cat": "Standards & practices",
+      "cat_id": "standards-practices",
+      "times": 1,
+      "why": "Whether to put everything in AGENTS.md or split standards into a docs folder for a team of 20 to 30, plus starter AGENTS.md files for Rust, Go, Java, and Zig.",
+      "sources": [
+        {
+          "label": "Site",
+          "url": "https://agents.md/"
+        }
+      ],
+      "ref": "Sep 30, 6:08 PM CT",
+      "last": "2026-09-30",
+      "first_referenced": "2026-09-30T18:08:00-05:00",
+      "first_has_time": true,
+      "last_referenced": "2026-09-30T18:08:00-05:00",
+      "last_has_time": true
+    },
+    {
+      "id": "github-spec-kit",
+      "tech": "GitHub Spec Kit",
+      "href": "https://github.com/github/spec-kit",
+      "cat": "Standards & practices",
+      "cat_id": "standards-practices",
+      "times": 1,
+      "why": "Compared with OpenSpec and simpler alternatives to see which spec-driven approach is winning.",
+      "sources": [
+        {
+          "label": "Repo",
+          "url": "https://github.com/github/spec-kit"
+        }
+      ],
+      "ref": "Sep 30 (time n/a)",
+      "last": "2026-09-30",
+      "first_referenced": "2026-09-30",
+      "first_has_time": false,
+      "last_referenced": "2026-09-30",
+      "last_has_time": false
+    },
+    {
+      "id": "codex-desktop",
+      "tech": "Codex Desktop",
+      "href": "https://github.com/openai/codex",
+      "cat": "AI coding tools",
+      "cat_id": "ai-coding-tools",
+      "times": 2,
+      "why": "Your local daily driver. You asked for a review workflow, given that it has no IDE-style diff review.",
+      "sources": [
+        {
+          "label": "Repo",
+          "url": "https://github.com/openai/codex"
+        }
+      ],
+      "ref": "First Sep 28 · Last Sep 30 (times n/a)",
+      "last": "2026-09-30",
+      "first_referenced": "2026-09-28",
+      "first_has_time": false,
+      "last_referenced": "2026-09-30",
+      "last_has_time": false
+    },
+    {
+      "id": "agent-skills-skill-md",
+      "tech": "Agent Skills (SKILL.md)",
+      "href": "https://agentskills.io/",
+      "cat": "Standards & practices",
+      "cat_id": "standards-practices",
+      "times": 1,
+      "why": "Wanted a hands-on path to writing your own skills. Feeds into the Rust skill pack.",
+      "sources": [
+        {
+          "label": "Site",
+          "url": "https://agentskills.io/"
+        }
+      ],
+      "ref": "Sep 29 (time n/a)",
+      "last": "2026-09-29",
+      "first_referenced": "2026-09-29",
+      "first_has_time": false,
+      "last_referenced": "2026-09-29",
+      "last_has_time": false
+    },
+    {
+      "id": "yaml-serde",
+      "tech": "yaml_serde",
+      "href": "https://crates.io/crates/yaml_serde",
+      "cat": "Rust & data",
+      "cat_id": "rust-data",
+      "times": 1,
+      "why": "Settled your Rust YAML default: yaml_serde, never serde_yaml. Use TOML for your own config.",
+      "sources": [
+        {
+          "label": "Crate",
+          "url": "https://crates.io/crates/yaml_serde"
+        }
+      ],
+      "ref": "Sep 29 (time n/a)",
+      "last": "2026-09-29",
+      "first_referenced": "2026-09-29",
+      "first_has_time": false,
+      "last_referenced": "2026-09-29",
+      "last_has_time": false
+    },
+    {
+      "id": "t3code",
+      "tech": "T3Code",
+      "href": "https://github.com/pingdotgg/t3code",
+      "cat": "AI coding tools",
+      "cat_id": "ai-coding-tools",
+      "times": 1,
+      "why": "Researched with Herdr and pi-durable: Theo's GUI for coding agents, compared with your Claude Code and Codex CLIs.",
+      "sources": [
+        {
+          "label": "Repo",
+          "url": "https://github.com/pingdotgg/t3code"
+        }
+      ],
+      "ref": "Date n/a",
+      "last": "",
+      "first_referenced": null,
+      "first_has_time": false,
+      "last_referenced": null,
+      "last_has_time": false
+    },
+    {
+      "id": "herdr",
+      "tech": "Herdr",
+      "href": "https://github.com/herdrdev/herdr",
+      "cat": "Agents & harnesses",
+      "cat_id": "agents-harnesses",
+      "times": 1,
+      "why": "A single Rust binary that keeps agent sessions running so you can detach and reattach. A terminal-first way to supervise several agents, including over SSH.",
+      "sources": [
+        {
+          "label": "Repo",
+          "url": "https://github.com/herdrdev/herdr"
+        }
+      ],
+      "ref": "Date n/a",
+      "last": "",
+      "first_referenced": null,
+      "first_has_time": false,
+      "last_referenced": null,
+      "last_has_time": false
+    },
+    {
+      "id": "exe-dev",
+      "tech": "exe.dev",
+      "href": "https://exe.dev/",
+      "cat": "Infra & platforms",
+      "cat_id": "infra-platforms",
+      "times": 1,
+      "why": "Read David Crawshaw's post and checked it against the beast and Fly: VMs you reach over SSH, billed by the minute, as sandboxes for agents.",
+      "sources": [
+        {
+          "label": "Site",
+          "url": "https://exe.dev/"
+        }
+      ],
+      "ref": "Date n/a",
+      "last": "",
+      "first_referenced": null,
+      "first_has_time": false,
+      "last_referenced": null,
+      "last_has_time": false
+    }
+  ]
+}

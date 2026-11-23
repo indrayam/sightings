@@ -1,0 +1,5 @@
+# Working files that must not be deployed (Vercel serves every uploaded file).
+/AGENTS.md
+/README.md
+.env*
+/.claude/
