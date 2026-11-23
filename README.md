@@ -9,6 +9,7 @@ Sightings is the companion to [Field Notes](https://fieldnotes.indrayam.com/). F
 - `asked-about.json` is the data. A research bot regenerates it; nothing else in the repo needs to change when it does.
 - `index.html`, `styles.css`, and `app.js` are a dependency-free single page. `app.js` fetches `asked-about.json` on every load and builds the cards, the Past week / Past month / All tabs, the category chips, and the search filter in the browser.
 - `vercel.json` sets `Cache-Control: max-age=0, must-revalidate` on the JSON so visitors always see the latest push.
+- `404.html` is the custom not-found page; `images/og-sightings.png` is the share image, rendered from `tools/og-sightings.html` (not deployed).
 - Filters are kept in the URL (`?r=week&c=models&q=rust`), so a filtered view can be shared.
 
 ## Updating

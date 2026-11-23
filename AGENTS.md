@@ -6,3 +6,5 @@
 - Keep the site static and dependency-free. `app.js` loads the JSON with `fetch`, so preview with a local static server, not `file://`.
 - For layout or styling changes, inspect the page at desktop and phone widths before claiming it works.
 - Vercel (Git-connected, project `sightings`) is the canonical host.
+- `images/og-sightings.png` is the 1200x630 share image referenced by the `og:image` and `twitter:image` tags in `index.html` and `404.html`. Edit its source, `tools/og-sightings.html`, then re-render it with headless Chrome (`--window-size=1200,630 --screenshot`) and keep the PNG small (`magick ... PNG8:`). `tools/` is listed in `.vercelignore` and is never deployed.
+- `404.html` is the custom not-found page Vercel serves for unknown paths. It uses absolute paths (`/styles.css`) because it can be served at any depth. Keep its site nav and footer identical to `index.html`'s, with Sightings marked as the current page.
