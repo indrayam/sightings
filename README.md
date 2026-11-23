@@ -26,7 +26,7 @@ direnv exec "$HOME/Dropbox/dev" git -C "$HOME/Dropbox/dev/indrayam.com/sightings
 
 ## Local preview
 
-`fetch` does not work from `file://`. Serve the folder instead:
+`fetch` does not work from `file://`. Serve the folder instead (the workspace's `.claude/launch.json` has a `sightings` entry on port 8086), or run:
 
 ```sh
 python3 -m http.server 8080
