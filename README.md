@@ -9,7 +9,7 @@ Sightings is the companion to [Field Notes](https://fieldnotes.indrayam.com/). F
 - `asked-about.json` is the data. A research bot regenerates it; nothing else in the repo needs to change when it does.
 - `index.html`, `styles.css`, and `app.js` are a dependency-free single page. `app.js` fetches `asked-about.json` on every load and builds the cards, the Past week / Past month / All tabs, the category chips, and the search filter in the browser.
 - `vercel.json` sets `Cache-Control: max-age=0, must-revalidate` on the JSON so visitors always see the latest push.
-- `404.html` is the custom not-found page; `images/og-sightings.png` is the share image, rendered from `tools/og-sightings.html` (not deployed).
+- `404.html` is the custom not-found page; `images/og-sightings.png` is the share image, rendered from `tools/og-sightings.html` (not deployed, like the rest of `tools/`).
 - Filters are kept in the URL (`?r=week&c=models&q=rust`), so a filtered view can be shared.
 
 ## Updating
@@ -18,6 +18,15 @@ Replace `asked-about.json` with the bot's latest output, commit, and push to `ma
 
 ```sh
 direnv exec "$HOME/Dropbox/dev" git -C "$HOME/Dropbox/dev/indrayam.com/sightings" push origin main
+```
+
+### Automatic push
+
+On this Mac a LaunchAgent, `~/Library/LaunchAgents/com.indrayam.sightings-autopush.plist`, runs `tools/autopush.sh` at 9:00 and 21:00 (or on wake, if the Mac was asleep). When `asked-about.json` has changed, the script checks that it parses, that `count` and every category count match the items, that IDs are unique, and that every `cat_id` is a known category. It then commits only that file ("Update Sightings (auto, …)") and pushes. It skips the run, without committing, if validation fails, the checkout is not on `main`, a merge or rebase is in progress, or `origin/main` has commits the local branch lacks. Every run appends a line to `tmp/autopush.log`.
+
+```sh
+launchctl kickstart gui/$(id -u)/com.indrayam.sightings-autopush   # run now
+launchctl bootout gui/$(id -u)/com.indrayam.sightings-autopush     # turn off
 ```
 
 ## JSON fields the page uses
