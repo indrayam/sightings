@@ -4,10 +4,10 @@
   "subtitle": "Every technology you've asked Archie about since mid-September 2026, most recent first.",
   "description": "Every technology you've asked Archie about since mid-September 2026, most recent first.",
   "footer": "Updated every Sunday with the tech radar: anything you ask about again gets a higher count and a new last date, and rows are never dropped. Past week and Past month are counted from today's date when you open the Page; items with no date show only under All. Times come from voice calls and are in Central Time; where no timestamp survived, the card says \"time n/a\" or \"date n/a\".",
-  "updated": "2026-11-23T14:49:42-06:00",
+  "updated": "2026-11-24T23:14:02-06:00",
   "timezone": "America/Chicago",
   "source_page": "https://cursor.com/canvas/store-32e840fe-082e-4b69-9eed-c8ef45bd8154/d69ce4f5-cf93-4b86-8de1-7344b89e3261",
-  "count": 39,
+  "count": 41,
   "categories": [
     {
       "id": "agents-harnesses",
@@ -27,7 +27,7 @@
     {
       "id": "standards-practices",
       "label": "Standards & practices",
-      "count": 9
+      "count": 10
     },
     {
       "id": "terminals-editors",
@@ -42,7 +42,7 @@
     {
       "id": "infra-platforms",
       "label": "Infra & platforms",
-      "count": 3
+      "count": 4
     },
     {
       "id": "diagrams-ui",
@@ -93,6 +93,93 @@
     }
   },
   "items": [
+    {
+      "id": "exe-dev",
+      "tech": "exe.dev",
+      "href": "https://exe.dev/",
+      "cat": "Infra & platforms",
+      "cat_id": "infra-platforms",
+      "times": 2,
+      "why": "Read David Crawshaw's post and checked it against the beast and Fly: VMs you reach over SSH, billed by the minute, as sandboxes for agents. A later post shows the whole stack on one VM: site + CMS + coding agent.",
+      "sources": [
+        {
+          "label": "Site",
+          "url": "https://exe.dev/"
+        },
+        {
+          "label": "exe.dev post (Nov 24)",
+          "url": "https://x.com/exedev/status/2125357255100936454"
+        },
+        {
+          "label": "Big Serverless Has Taken Us for Fools (exe.dev blog)",
+          "url": "https://blog.exe.dev/big-serverless-has-taken-us-for-fools"
+        }
+      ],
+      "ref": "First Date n/a · Last Nov 24, 11:11 PM CT",
+      "last": "2026-11-24",
+      "first_referenced": null,
+      "first_has_time": false,
+      "last_referenced": "2026-11-24T23:11:00-06:00",
+      "last_has_time": true
+    },
+    {
+      "id": "supply-chain-hardening-astral-uv-guide",
+      "tech": "Supply-chain hardening (Astral/uv guide)",
+      "href": "https://astral.sh/blog/securing-from-supply-chain-attacks",
+      "cat": "Standards & practices",
+      "cat_id": "standards-practices",
+      "times": 1,
+      "why": "Astral's checklist (hash-pin GitHub Actions to SHAs, hash-check binary downloads, Trusted Publishing via OIDC, zizmor CI linter, dependency cooldowns of ~3 days, locked CI tools, script lockfiles, no sdist builds) maps to your Rust repos: Cargo.lock checksums, `--locked` everywhere, SHA-pinned Actions + zizmor on dailydiff/blog etc., Renovate `minimumReleaseAge`/Dependabot cooldown for cargo, crates.io trusted publishing, `build.rs`/proc-macros as the build-time code-execution risk.",
+      "sources": [
+        {
+          "label": "Charlie Marsh post (Nov 24)",
+          "url": "https://x.com/charliermarsh/status/2125235407264903324"
+        },
+        {
+          "label": "Astral blog",
+          "url": "https://astral.sh/blog/securing-from-supply-chain-attacks"
+        },
+        {
+          "label": "zizmor repo",
+          "url": "https://github.com/zizmorcore/zizmor"
+        }
+      ],
+      "ref": "First Nov 24, 10:40 PM CT",
+      "last": "2026-11-24",
+      "first_referenced": "2026-11-24T22:40:00-06:00",
+      "first_has_time": true,
+      "last_referenced": "2026-11-24T22:40:00-06:00",
+      "last_has_time": true
+    },
+    {
+      "id": "airbnb-skipper",
+      "tech": "Airbnb Skipper",
+      "href": "https://github.com/airbnb/skipper",
+      "cat": "Infra & platforms",
+      "cat_id": "infra-platforms",
+      "times": 1,
+      "why": "Airbnb's open-source embedded durable workflow engine for Java/Kotlin: workflows and actions as classes, with checkpoints and replay, retries, waitUntil timers, signals, and Saga compensation, as a library on the database you already have (MySQL and SQLite today; Postgres is only on the roadmap). Parked as explore-only. Not a drop-in for Neon; useful as a reference for a small Postgres-backed durable-step pattern (claim/lease + idempotency keys) in Axum/SQLx. Closest relative is DBOS Transact (Postgres); contrast with Temporal/Restate, which are separate orchestration services. Qian Li (DBOS co-founder) framed the comparison, so treat that as partly promotional.",
+      "sources": [
+        {
+          "label": "Qian Li post (Nov 23)",
+          "url": "https://x.com/qianl_cs/status/2125005132626858088"
+        },
+        {
+          "label": "Repo",
+          "url": "https://github.com/airbnb/skipper"
+        },
+        {
+          "label": "Airbnb blog",
+          "url": "https://airbnb.tech/open-source/skipper-airbnbs-embedded-workflow-engine-is-now-open-source/"
+        }
+      ],
+      "ref": "First Nov 24, 1:28 PM CT",
+      "last": "2026-11-24",
+      "first_referenced": "2026-11-24T13:28:00-06:00",
+      "first_has_time": true,
+      "last_referenced": "2026-11-24T13:28:00-06:00",
+      "last_has_time": true
+    },
     {
       "id": "tla",
       "tech": "TLA+",
@@ -957,27 +1044,6 @@
         {
           "label": "Repo",
           "url": "https://github.com/herdrdev/herdr"
-        }
-      ],
-      "ref": "Date n/a",
-      "last": "",
-      "first_referenced": null,
-      "first_has_time": false,
-      "last_referenced": null,
-      "last_has_time": false
-    },
-    {
-      "id": "exe-dev",
-      "tech": "exe.dev",
-      "href": "https://exe.dev/",
-      "cat": "Infra & platforms",
-      "cat_id": "infra-platforms",
-      "times": 1,
-      "why": "Read David Crawshaw's post and checked it against the beast and Fly: VMs you reach over SSH, billed by the minute, as sandboxes for agents.",
-      "sources": [
-        {
-          "label": "Site",
-          "url": "https://exe.dev/"
         }
       ],
       "ref": "Date n/a",
