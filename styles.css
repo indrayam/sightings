@@ -111,7 +111,7 @@ a {
 }
 
 .copyright {
-  font-family: var(--font-body);
+  font-family: "PT Serif", Georgia, "Times New Roman", serif; /* the footer matches the other sites */
   font-size: 0.6875rem;
   margin-top: 5px;
   text-align: center;
