@@ -4,10 +4,10 @@
   "subtitle": "Every technology you've asked Archie about since mid-September 2026, most recent first.",
   "description": "Every technology you've asked Archie about since mid-September 2026, most recent first.",
   "footer": "Updated every Sunday with the tech radar: anything you ask about again gets a higher count and a new last date, and rows are never dropped. Past week and Past month are counted from today's date when you open the Page; items with no date show only under All. Times come from voice calls and are in Central Time; where no timestamp survived, the card says \"time n/a\" or \"date n/a\".",
-  "updated": "2026-11-24T23:14:02-06:00",
+  "updated": "2026-11-25T21:07:54-06:00",
   "timezone": "America/Chicago",
   "source_page": "https://cursor.com/canvas/store-32e840fe-082e-4b69-9eed-c8ef45bd8154/d69ce4f5-cf93-4b86-8de1-7344b89e3261",
-  "count": 41,
+  "count": 42,
   "categories": [
     {
       "id": "agents-harnesses",
@@ -42,7 +42,7 @@
     {
       "id": "infra-platforms",
       "label": "Infra & platforms",
-      "count": 4
+      "count": 5
     },
     {
       "id": "diagrams-ui",
@@ -93,6 +93,39 @@
     }
   },
   "items": [
+    {
+      "id": "cloudflare-email-sending-on-workers-free",
+      "tech": "Cloudflare Email Sending on Workers Free",
+      "href": "https://developers.cloudflare.com/changelog/post/2026-11-24-email-sending-workers-free/",
+      "cat": "Infra & platforms",
+      "cat_id": "infra-platforms",
+      "times": 1,
+      "why": "Free outbound email to verified destination addresses only, which suits self-alerts and cron reports from Axum/Fly services over the REST API or SMTP (no Worker required). Sending to arbitrary recipients needs Workers Paid ($5/mo, 3,000 included, then $0.35 per 1,000). It's beta, and new accounts start with a low daily limit. Use it for self-notifications, otherwise park.",
+      "sources": [
+        {
+          "label": "CloudflareDev post",
+          "url": "https://x.com/CloudflareDev/status/2125564566755291247"
+        },
+        {
+          "label": "Changelog (Nov 24)",
+          "url": "https://developers.cloudflare.com/changelog/post/2026-11-24-email-sending-workers-free/"
+        },
+        {
+          "label": "Pricing",
+          "url": "https://developers.cloudflare.com/email-service/platform/pricing/"
+        },
+        {
+          "label": "Limits",
+          "url": "https://developers.cloudflare.com/email-service/platform/limits/"
+        }
+      ],
+      "ref": "First Nov 25, 9:06 PM CT",
+      "last": "2026-11-25",
+      "first_referenced": "2026-11-25T21:06:00-06:00",
+      "first_has_time": true,
+      "last_referenced": "2026-11-25T21:06:00-06:00",
+      "last_has_time": true
+    },
     {
       "id": "exe-dev",
       "tech": "exe.dev",
