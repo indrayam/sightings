@@ -23,8 +23,26 @@ if [[ -d .git/rebase-merge || -d .git/rebase-apply || -f .git/MERGE_HEAD ]]; the
 fi
 
 if [[ -z "$(git status --porcelain -- "$FILE")" ]]; then
-  log "no change"
-  exit 0
+  # A previous run may have committed but failed to push; retry that push.
+  if ! direnv exec "$ENVDIR" git fetch -q origin main; then log "ERROR: fetch failed"; exit 1; fi
+  pending=$(git log --format=%s origin/main..HEAD)
+  if [[ -z "$pending" ]]; then
+    log "no change"
+    exit 0
+  fi
+  # Only retry our own commits; leave hand-made local commits for a person to push.
+  if print -r -- "$pending" | grep -qv '^Update Sightings (auto, '; then
+    log "SKIP: unpushed local commits include manual work; push by hand"; exit 0
+  fi
+  if ! git merge-base --is-ancestor origin/main HEAD; then
+    log "SKIP: unpushed local commits, but origin/main has commits not in the local branch; pull first"; exit 0
+  fi
+  if direnv exec "$ENVDIR" git push -q origin main; then
+    log "pushed pending $(git rev-parse --short HEAD)"
+    exit 0
+  fi
+  log "ERROR: retry push failed; commit $(git rev-parse --short HEAD) is still local only"
+  exit 1
 fi
 
 # Validate: parses, top-level count, per-category counts, unique ids, known categories.
@@ -38,6 +56,34 @@ items = d.get("items")
 errs = []
 if not isinstance(items, list) or not items:
     print("items missing or empty"); sys.exit(1)
+# Field types app.js relies on; a wrong type there breaks the whole page.
+def kind(v, want):
+    return isinstance(v, want) and not (want is int and isinstance(v, bool))
+REQUIRED = {"id": str, "tech": str, "cat": str, "cat_id": str, "why": str, "last": str}
+OPTIONAL = {"href": str, "first_referenced": str, "last_referenced": str, "times": int,
+            "first_has_time": bool, "last_has_time": bool}
+for n, it in enumerate(items):
+    where = f"item {n}"
+    if not isinstance(it, dict):
+        errs.append(f"{where} is not an object"); continue
+    where = f"item {it.get('id', n)!r}"
+    for k, t in REQUIRED.items():
+        if not kind(it.get(k), t):
+            errs.append(f"{where}: {k} must be {t.__name__}")
+    for k, t in OPTIONAL.items():
+        if it.get(k) is not None and not kind(it[k], t):
+            errs.append(f"{where}: {k} must be {t.__name__} or null")
+    srcs = it.get("sources")
+    if srcs is not None:
+        if not isinstance(srcs, list):
+            errs.append(f"{where}: sources must be a list")
+        elif not all(isinstance(s, dict) and isinstance(s.get("label"), str)
+                     and (s.get("url") is None or isinstance(s["url"], str)) for s in srcs):
+            errs.append(f"{where}: each source needs a string label and a string or null url")
+if not isinstance(d.get("categories", []), list) or not all(isinstance(c, dict) for c in d.get("categories", [])):
+    errs.append("categories must be a list of objects")
+if errs:
+    print("; ".join(errs[:10])); sys.exit(1)
 if d.get("count") != len(items):
     errs.append(f"count {d.get('count')} != {len(items)} items")
 ids = [i.get("id") for i in items]
