@@ -239,10 +239,25 @@
       (filtered ? ' <button type="button" id="reset-filters">Clear filters</button>' : "");
   }
 
-  function update(changes) {
+  // render() rebuilds the tab and chip buttons, so put focus back on the
+  // equivalent new button, or on `fallback` when the focused control is gone.
+  function update(changes, fallback) {
+    var active = document.activeElement;
+    var target = null;
+    if (active && els.tabs.contains(active) && active.dataset.r) {
+      target = { box: els.tabs, sel: '[data-r="' + CSS.escape(active.dataset.r) + '"]' };
+    } else if (active && els.chips.contains(active) && active.dataset.c) {
+      target = { box: els.chips, sel: '[data-c="' + CSS.escape(active.dataset.c) + '"]' };
+    }
     Object.assign(state, changes);
     writeUrlState();
     render();
+    var next = target && target.box.querySelector(target.sel);
+    if (next) next.focus();
+    else if (fallback && (!document.activeElement || document.activeElement === document.body)) {
+      next = typeof fallback === "function" ? fallback() : fallback;
+      if (next) next.focus();
+    }
   }
 
   function renderMasthead() {
@@ -258,9 +273,32 @@
     }
   }
 
+  function isObject(value) {
+    return value !== null && typeof value === "object" && !Array.isArray(value);
+  }
+
+  function textOrNull(value) {
+    return typeof value === "string" ? value : value == null ? null : String(value);
+  }
+
+  function normalizeItem(item) {
+    var it = Object.assign({}, item);
+    ["tech", "why", "cat", "cat_id", "last"].forEach(function (k) {
+      it[k] = textOrNull(it[k]) || "";
+    });
+    ["href", "first_referenced", "last_referenced"].forEach(function (k) {
+      it[k] = textOrNull(it[k]);
+    });
+    it.sources = (Array.isArray(it.sources) ? it.sources : []).filter(isObject).map(function (s) {
+      return { label: textOrNull(s.label) || "", url: textOrNull(s.url) };
+    });
+    return it;
+  }
+
   function prepare(json) {
     data = json;
-    data.items = (Array.isArray(json.items) ? json.items : []).slice();
+    // Tolerate malformed entries so one bad item can't take down the page.
+    data.items = (Array.isArray(json.items) ? json.items : []).filter(isObject).map(normalizeItem);
     if (json.filters && Array.isArray(json.filters.recency) && json.filters.recency.length) {
       recencies = json.filters.recency;
     }
@@ -268,7 +306,7 @@
       els.search.placeholder = json.filters.search_placeholder;
     }
 
-    categories = Array.isArray(json.categories) ? json.categories.slice() : [];
+    categories = (Array.isArray(json.categories) ? json.categories : []).filter(isObject);
     data.items.forEach(function (it) {
       if (it.cat_id && !categories.some(function (c) { return c.id === it.cat_id; })) {
         categories.push({ id: it.cat_id, label: it.cat || it.cat_id });
@@ -302,7 +340,10 @@
     els.cards.addEventListener("click", function (e) {
       var btn = e.target.closest(".card-cat[data-c]");
       if (!btn) return;
-      update({ c: btn.dataset.c });
+      var cat = btn.dataset.c;
+      update({ c: cat }, function () {
+        return els.chips.querySelector('[data-c="' + CSS.escape(cat) + '"]');
+      });
       els.chips.scrollIntoView({ behavior: "smooth", block: "nearest" });
     });
     els.status.addEventListener("click", function (e) {
@@ -311,7 +352,7 @@
         return r.default;
       });
       els.search.value = "";
-      update({ r: def ? def.id : "all", c: "all", q: "" });
+      update({ r: def ? def.id : "all", c: "all", q: "" }, els.search);
     });
     var timer;
     els.search.addEventListener("input", function () {
