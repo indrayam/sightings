@@ -4,10 +4,10 @@
   "subtitle": "Every technology you've asked Archie about since mid-September 2026, most recent first.",
   "description": "Every technology you've asked Archie about since mid-September 2026, most recent first.",
   "footer": "Updated every Sunday with the tech radar: anything you ask about again gets a higher count and a new last date, and rows are never dropped. Past week and Past month are counted from today's date when you open the Page; items with no date show only under All. Times come from voice calls and are in Central Time; where no timestamp survived, the card says \"time n/a\" or \"date n/a\".",
-  "updated": "2026-11-25T21:07:54-06:00",
+  "updated": "2026-11-27T11:40:25-06:00",
   "timezone": "America/Chicago",
   "source_page": "https://cursor.com/canvas/store-32e840fe-082e-4b69-9eed-c8ef45bd8154/d69ce4f5-cf93-4b86-8de1-7344b89e3261",
-  "count": 42,
+  "count": 43,
   "categories": [
     {
       "id": "agents-harnesses",
@@ -37,7 +37,7 @@
     {
       "id": "rust-data",
       "label": "Rust & data",
-      "count": 3
+      "count": 4
     },
     {
       "id": "infra-platforms",
@@ -93,6 +93,35 @@
     }
   },
   "items": [
+    {
+      "id": "deser",
+      "tech": "deser",
+      "href": "https://github.com/mitsuhiko/deser",
+      "cat": "Rust & data",
+      "cat_id": "rust-data",
+      "times": 1,
+      "why": "Armin's experimental serde alternative for self-describing formats only (JSON, msgpack; no bincode), latest 0.10.2 published Oct 26. He's asking people to have agents evaluate whether the design has a future. Parked in Rust experimental; serde stays the default because SQLx, Axum, reqwest, toml, and yaml_serde all depend on it.",
+      "sources": [
+        {
+          "label": "Armin Ronacher post",
+          "url": "https://x.com/mitsuhiko/status/2126354747066138830"
+        },
+        {
+          "label": "Repo",
+          "url": "https://github.com/mitsuhiko/deser"
+        },
+        {
+          "label": "docs.rs",
+          "url": "https://docs.rs/deser/latest/deser/"
+        }
+      ],
+      "ref": "First Nov 27, 11:37 AM CT",
+      "last": "2026-11-27",
+      "first_referenced": "2026-11-27T11:37:00-06:00",
+      "first_has_time": true,
+      "last_referenced": "2026-11-27T11:37:00-06:00",
+      "last_has_time": true
+    },
     {
       "id": "cloudflare-email-sending-on-workers-free",
       "tech": "Cloudflare Email Sending on Workers Free",
